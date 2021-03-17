@@ -36,10 +36,6 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    align-self:center;
-    
-
     /*Your code here*/
     /*You must use flex.
     /*Don't forget to vertically and horizontally 
@@ -55,6 +51,7 @@ header{
   padding: 0 0 50px 0;
   width: 400px;
   flex-basis: 400px;
+  flex-direction: column;
   /*Your code here.*/
   /*Take a look at flex-basis*/
 
@@ -70,15 +67,13 @@ header{
 
 /*Requirement 7*/
 .gallery{
-  min-height: 600px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-flow: row;
-  align-items: center;
-  align-self: center;
-  /*Your code here again.*/
-
-}
+    min-height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    /*Your code here again.*/
+  
+  }
 
 /*Requirement 8*/
 .gallery>img{
@@ -90,19 +85,20 @@ header{
 
 /*Requirement 9*/
 #logo{
-  animation-duration: 15s;
-  animation-iteration-count: 1;
+  animation-duration: 15s 1;
    /*Your code here.*/
 }
 
 /*Keyframes for animation*/
 @-webkit-keyframes logo_grow{
 
-  0% {
+  from{
     width: 25px;
+    opacity: 0;
   }
-  100% {
+  to{
     width: 420px;
+    opacity: 1;
   }
   /*Your code here.*/
 
@@ -110,12 +106,14 @@ header{
 
 @keyframes logo_grow{
 
-  0%{
+  from{
     opacity: 0;
+    width: 25px;
   }
 
-  100% {
+  to{
     opacity: 1;
+    width: 420px;
   }
   /*Your code here.*/
 } 
@@ -135,7 +133,6 @@ header{
     display: flex;
     flex-direction: row;
   
-  
     /*Your code here again.*/  
   }
 
@@ -144,7 +141,6 @@ header{
     display: flex;
     width: 230px;
     flex-direction: column;
-    
     /*Your code here again.*/
   } 
 }
