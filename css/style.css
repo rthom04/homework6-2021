@@ -13,7 +13,6 @@ header{
   background: #fff;
   border-bottom: 3px solid #50C7C7;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 /* fix */
@@ -36,6 +35,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+
     /*Your code here*/
     /*You must use flex.
     /*Don't forget to vertically and horizontally 
@@ -49,7 +50,6 @@ header{
   background: #fff;
   border-radius: 7px;
   padding: 0 0 50px 0;
-  width: 400px;
   flex-basis: 400px;
   flex-direction: column;
   /*Your code here.*/
@@ -67,10 +67,11 @@ header{
 
 /*Requirement 7*/
 .gallery{
-    min-height: 600px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: stretch;
+  min-height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
     /*Your code here again.*/
   
   }
@@ -89,42 +90,36 @@ header{
    /*Your code here.*/
 }
 
+#logo{
+  /*Your code here.*/
+ -webkit-animation: logo_grow;
+ animation-name: logo_grow;
+ animation-duration: 15s;
+ animation-iteration-count: 1;
+ -webkit-animation-duration: 15s;
+ -webkit-animation-iteration-count: 1;
+}
+
 /*Keyframes for animation*/
 @-webkit-keyframes logo_grow{
-
-  from{
-    width: 25px;
-    opacity: 0;
-  }
-  to{
-    width: 420px;
-    opacity: 1;
-  }
   /*Your code here.*/
-
+  from {width: 25px; opacity: 0;}
+  to {width: 420px; opacity: 1;}
 }
 
 @keyframes logo_grow{
-
-  from{
-    opacity: 0;
-    width: 25px;
-  }
-
-  to{
-    opacity: 1;
-    width: 420px;
-  }
   /*Your code here.*/
-} 
+  from {width: 25px; opacity: 0;}
+  to {width: 420px; opacity: 1;}
+}
 
 @media screen and (min-width: 850px){
 
   /*Requirement 10*/
   header{
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: left;
     /*Your code here again.*/  
   }
 
@@ -139,8 +134,7 @@ header{
   /*Requirement 11*/
   .package {
     display: flex;
-    width: 230px;
-    flex-direction: column;
+    flex-basis: 230px;
     /*Your code here again.*/
   } 
 }
@@ -168,6 +162,7 @@ header{
   }
   .nav_links{
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
 
   }
@@ -180,6 +175,10 @@ header{
     border-width: 2px;
     border-color: #45ADAD;
     flex-basis: 200px;
+  }
+
+  .gallery{
+    display: none;
   }
 
   #gallery{
